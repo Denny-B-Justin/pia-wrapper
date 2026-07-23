@@ -51,7 +51,7 @@ def tool_detail_panel(logo_url):
     """Description block for PIA.
 
     Rendered directly against the page/section background rather than in a
-    bordered card \u2014 it should read as part of the page itself, not as a
+    bordered card it should read as part of the page itself, not as a
     boxed-in info panel sitting on top of it.
     """
     return html.Div(

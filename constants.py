@@ -21,7 +21,7 @@ COLORS = {
     "accent": "#1f9d67",  # PIA's accent (green), carried over from the workspace palette
 }
 
-APP_TITLE = "PIA \u2014 Public Infrastructure Access"
+APP_TITLE = "Public Infrastructure Access Tool"
 
 LOGO_FILENAME = "pia_logo.png"
 
@@ -44,7 +44,7 @@ TOOL_BULLETS = [
 ]
 
 # ---------------------------------------------------------------------------
-# PIA deployment \u2014 one base Posit Connect app, five country instances
+# PIA deployment - one base Posit Connect app, five country instances
 # served via a query string (?country=slug).
 # ---------------------------------------------------------------------------
 PIA_BASE_URL = "https://datanalytics.worldbank.org/content/1cc36c57-f12d-4aa8-92a2-196bb0ea605f/"

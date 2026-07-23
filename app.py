@@ -1,7 +1,7 @@
 """
 app.py
 ------
-PIA (Public Infrastructure Access) \u2014 standalone Dash app.
+PIA (Public Infrastructure Access) standalone Dash app.
 
 This is the single-tool version of the PIA embed that used to live inside
 the PIM-PAM Digital Workspace aggregator (which bundled PIA + GoAT + CBD
@@ -72,6 +72,27 @@ def build_layout():
         className="app-shell",
     )
 
+FAVICON_URL = app.get_asset_url("pia_favicon.ico")
+
+app.index_string = """
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        <link rel="icon" type="image/x-icon" href=\"""" + FAVICON_URL + """\">
+        {%css%}
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+"""
 
 app.layout = build_layout
 
