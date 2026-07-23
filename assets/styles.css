@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ---------------------------------------------------------------------- */
+/* Design tokens - light mode, flat surfaces, sharp corners, no gradients */
+/* ---------------------------------------------------------------------- */
+:root {
+  --bg: #FFFFFF;
+  --surface: #F5F6F9;
+  --surface-2: #FFFFFF;
+  --text: #14192B;
+  --muted: #5B6478;
+  --accent: #1f9d67;
+  --border: #DCDFE7;
+  --shadow-color: rgba(20, 25, 43, 0.06);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fira Sans', system-ui, sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+p { line-height: 1.65; }
+
+.app-shell { min-height: 100vh; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: rgba(31,157,103,0.35); }
+::-webkit-scrollbar-thumb:hover { background: rgba(31,157,103,0.55); }
+
+/* ---------------------------------------------------------------------- */
+/* Top nav - logo only, no text wordmark                                  */
+/* ---------------------------------------------------------------------- */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+}
+
+.top-nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+/* ---------------------------------------------------------------------- */
+/* PIA section wrapper                                                    */
+/* ---------------------------------------------------------------------- */
+.pia-section { background: var(--bg); }
+
+.section-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Detail panel - intentionally unboxed. No border, no card background;   */
+/* it sits directly on the page/section background, logo where the       */
+/* "PIA" acronym badge used to be.                                        */
+/* ---------------------------------------------------------------------- */
+.panel-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-logo {
+  height: 22px;
+  width: auto;
+  margin-bottom: 4px;
+}
+
+.panel-title {
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.panel-description {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 760px;
+}
+
+.panel-bullets {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.panel-bullets li::marker { color: var(--accent); }
+
+/* ---------------------------------------------------------------------- */
+/* Country switcher - flat, square                                        */
+/* ---------------------------------------------------------------------- */
+.country-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 2px;
+}
+
+.switcher-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.country-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.country-chip {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 0;
+  border: 1px solid var(--border);
+  background: #FFFFFF;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.country-chip:hover { color: var(--text); border-color: var(--accent); }
+
+.country-chip.is-active {
+  background: var(--surface);
+  border-color: var(--accent);
+  border-width: 1px 1px 3px 1px;
+  color: var(--text);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Embedded frame - flat, square                                          */
+/* ---------------------------------------------------------------------- */
+.frame-wrapper {
+  border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.frame-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.frame-fallback-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.frame-fallback-link:hover { text-decoration: underline; }
+
+.tool-iframe-aspect {
+  position: relative;
+  width: 100%;
+  /* aspect-ratio is set inline from constants.py (IFRAME_ASPECT_RATIO) */
+}
+
+.tool-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: #ffffff;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Footer                                                                  */
+/* ---------------------------------------------------------------------- */
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Responsive                                                              */
+/* ---------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .section-inner { padding: 40px 16px; }
+}
