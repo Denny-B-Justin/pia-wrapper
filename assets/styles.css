@@ -59,10 +59,33 @@ p { line-height: 1.65; }
   align-items: center;
 }
 
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
 .brand-logo {
-  height: 32px;
+  height: 50px;
   width: auto;
   display: block;
+  margin-left: 0px;
+}
+
+.brand-logo--secondary {
+  height: 42px;
+  width: auto;
+  margin-left: -150px;
+}
+
+.brand-title {
+  font-family: 'Fira Sans', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin: 0;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -80,9 +103,9 @@ p { line-height: 1.65; }
 }
 
 /* ---------------------------------------------------------------------- */
-/* Detail panel - intentionally unboxed. No border, no card background;   */
-/* it sits directly on the page/section background, logo where the       */
-/* "PIA" acronym badge used to be.                                        */
+/* Detail panel - intentionally unboxed. Title row sits inline with the    */
+/* logo and remains part of the section content rather than a standalone  */
+/* panel card.                                                             */
 /* ---------------------------------------------------------------------- */
 .panel-detail {
   display: flex;
@@ -90,16 +113,25 @@ p { line-height: 1.65; }
   gap: 12px;
 }
 
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .panel-logo {
-  height: 22px;
+  height: 40px;
   width: auto;
-  margin-bottom: 4px;
+  display: block;
+  flex: 0 0 auto;
 }
 
 .panel-title {
   font-size: clamp(24px, 3vw, 32px);
   color: var(--text);
   font-weight: 700;
+  line-height: 1.1;
 }
 
 .panel-description {

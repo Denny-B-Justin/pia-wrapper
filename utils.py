@@ -8,7 +8,6 @@ Keeping these out of app.py keeps the layout/callback file readable.
 from dash import html
 
 from constants import (
-    LOGO_PATH,
     TOOL_NAME,
     TOOL_DESCRIPTION,
     TOOL_BULLETS,
@@ -17,20 +16,38 @@ from constants import (
 )
 
 
-def brand_header():
-    """Top nav. The logo stands in for the plain-text 'PIA' acronym that
-    used to appear here in the aggregator version.
+def brand_header(logo_url, secondary_logo_url=None, title=None):
+    """Top nav lockup with the primary tool logo and an optional partner logo.
+
+    The header now presents the brand stack as a compact lockup instead of a
+    single floating logo.
     """
+    brand_images = []
+    if secondary_logo_url:
+        brand_images.append(
+            html.Img(
+                src=secondary_logo_url,
+                alt="PIM-PAM",
+                className="brand-logo brand-logo--secondary",
+            )
+        )
+
+    brand_images.append(
+        html.Img(src=logo_url, alt="PIA", className="brand-logo")
+    )
+
+    logo_group = html.Div(
+        brand_images + ([html.H1(title, className="brand-title")] if title else []),
+        className="brand-lockup",
+    )
+
     return html.Header(
-        html.Div(
-            html.Img(src=LOGO_PATH, alt="PIA", className="brand-logo"),
-            className="top-nav-inner",
-        ),
+        html.Div(logo_group, className="top-nav-inner"),
         className="top-nav",
     )
 
 
-def tool_detail_panel():
+def tool_detail_panel(logo_url):
     """Description block for PIA.
 
     Rendered directly against the page/section background rather than in a
@@ -39,8 +56,13 @@ def tool_detail_panel():
     """
     return html.Div(
         [
-            html.Img(src=LOGO_PATH, alt="PIA", className="panel-logo"),
-            html.H1(TOOL_NAME, className="panel-title"),
+            html.Div(
+                [
+                    html.Img(src=logo_url, alt="PIA", className="panel-logo"),
+                    html.H1(TOOL_NAME, className="panel-title"),
+                ],
+                className="panel-header",
+            ),
             html.P(TOOL_DESCRIPTION, className="panel-description"),
             html.Ul(
                 [html.Li(b) for b in TOOL_BULLETS],

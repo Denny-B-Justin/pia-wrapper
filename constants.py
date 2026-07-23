@@ -23,15 +23,12 @@ COLORS = {
 
 APP_TITLE = "PIA \u2014 Public Infrastructure Access"
 
-# Logo lives in the /assets folder (Dash auto-serves anything in /assets at
-# this path). It replaces the plain-text "PIA" acronym badge everywhere that
-# badge used to appear in the aggregator version.
-LOGO_PATH = "/assets/pia-logo.png"
+LOGO_FILENAME = "pia_logo.png"
 
 # ---------------------------------------------------------------------------
 # Tool copy
 # ---------------------------------------------------------------------------
-TOOL_NAME = "Public Infrastructure Access"
+TOOL_NAME = "Public Infrastructure Access Tool"
 
 TOOL_DESCRIPTION = (
     "PIA is a geospatial optimizer that helps governments decide where to place new "

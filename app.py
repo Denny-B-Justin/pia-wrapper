@@ -16,7 +16,7 @@ import dash
 from dash import html, dcc, Input, Output, ALL, ctx
 import dash.exceptions
 
-from constants import APP_TITLE, PIA_DEFAULT_COUNTRY, pia_url_for
+from constants import APP_TITLE, LOGO_FILENAME, PIA_DEFAULT_COUNTRY, pia_url_for
 from utils import (
     brand_header,
     tool_detail_panel,
@@ -27,6 +27,8 @@ from utils import (
 app = dash.Dash(__name__, title=APP_TITLE, update_title=None)
 server = app.server
 
+LOGO_URL = app.get_asset_url(LOGO_FILENAME)
+PIM_PAM_LOGO_URL = app.get_asset_url("PIM-PAM_Logo_Dark.png")
 
 # ---------------------------------------------------------------------------
 # Layout
@@ -38,14 +40,18 @@ def build_layout():
             # ---- store (client-side state, no server session needed) ----
             dcc.Store(id="active-country-store", data=PIA_DEFAULT_COUNTRY),
 
-            # ---- top nav (logo only, replaces the old text acronym) ----
-            brand_header(),
+            # ---- top nav lockup with partner branding and title ----
+            brand_header(
+                LOGO_URL,
+                secondary_logo_url=PIM_PAM_LOGO_URL,
+                title="Public Infrastructure Access Tool",
+            ),
 
             # ---- PIA detail + country switcher + embed ----
             html.Section(
                 html.Div(
                     [
-                        tool_detail_panel(),
+                        tool_detail_panel(LOGO_URL),
                         html.Div(id="country-switcher-wrap"),
                         html.Div(id="embed-wrap"),
                     ],
@@ -57,7 +63,7 @@ def build_layout():
 
             html.Footer(
                 html.Div(
-                    "Public Infrastructure Access \u00b7 The World Bank",
+                    "© Public Infrastructure Access \u00b7 The World Bank",
                     className="footer-inner",
                 ),
                 className="footer",
