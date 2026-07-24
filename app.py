@@ -78,8 +78,7 @@ app.index_string = """
 <!DOCTYPE html>
 <html>
     <head>
-        {%metas%}
-        <title>{%title%}</title>
+        {%metas%}        <meta name="viewport" content="width=device-width, initial-scale=1.1, minimum-scale=1.1, maximum-scale=1.1">        <title>{%title%}</title>
         <link rel="icon" type="image/x-icon" href=\"""" + FAVICON_URL + """\">
         {%css%}
     </head>
