@@ -28,7 +28,7 @@ app = dash.Dash(__name__, title=APP_TITLE, update_title=None)
 server = app.server
 
 LOGO_URL = app.get_asset_url(LOGO_FILENAME)
-PIM_PAM_LOGO_URL = app.get_asset_url("PIM-PAM_Logo_Dark.png")
+PIM_PAM_LOGO_URL = app.get_asset_url("PIMPAM.png")
 
 # ---------------------------------------------------------------------------
 # Layout
