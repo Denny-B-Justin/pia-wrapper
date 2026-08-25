@@ -102,14 +102,13 @@ app.layout = build_layout
 
 @app.callback(
     Output("active-country-store", "data"),
-    Input({"type": "country-select", "index": ALL}, "n_clicks"),
+    Input("country-dropdown", "value"),
     prevent_initial_call=True,
 )
-def set_active_country(_n_clicks):
-    triggered = ctx.triggered_id
-    if not triggered or not any(_n_clicks):
+def set_active_country(selected_country):
+    if selected_country is None:
         raise dash.exceptions.PreventUpdate
-    return triggered["index"]
+    return selected_country
 
 
 @app.callback(

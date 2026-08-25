@@ -5,7 +5,7 @@ Reusable component builders for the standalone PIA app.
 Keeping these out of app.py keeps the layout/callback file readable.
 """
 
-from dash import html
+from dash import html, dcc
 
 from constants import (
     TOOL_NAME,
@@ -73,23 +73,20 @@ def tool_detail_panel(logo_url):
     )
 
 
-def country_chip(country, is_active):
-    return html.Button(
-        html.Span(country["name"], className="chip-name"),
-        id={"type": "country-select", "index": country["id"]},
-        n_clicks=0,
-        className=f"country-chip {'is-active' if is_active else ''}",
-        title=country["region"],
-    )
-
-
 def country_switcher(active_country_id):
     return html.Div(
         [
             html.Span("Country instance:", className="switcher-label"),
-            html.Div(
-                [country_chip(c, c["id"] == active_country_id) for c in PIA_COUNTRIES],
-                className="country-chip-row",
+            dcc.Dropdown(
+                id="country-dropdown",
+                options=[
+                    {"label": country["name"], "value": country["id"]}
+                    for country in PIA_COUNTRIES
+                ],
+                value=active_country_id,
+                clearable=False,
+                searchable=True,
+                className="country-dropdown",
             ),
         ],
         className="country-switcher",
