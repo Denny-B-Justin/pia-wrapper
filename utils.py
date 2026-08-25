@@ -85,7 +85,7 @@ def country_switcher(active_country_id):
                 ],
                 value=active_country_id,
                 clearable=False,
-                searchable=True,
+                searchable=False,
                 className="country-dropdown",
             ),
         ],
