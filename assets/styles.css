@@ -189,6 +189,10 @@ p { line-height: 1.65; }
   font-weight: 500;
 }
 
+.country-dropdown * {
+  font-family: 'Fira Sans', system-ui, sans-serif !important;
+}
+
 .country-dropdown .Select-control {
   border: 1px solid var(--border);
   border-radius: 0;

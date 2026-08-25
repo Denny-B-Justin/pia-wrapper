@@ -50,28 +50,29 @@ TOOL_BULLETS = [
 PIA_BASE_URL = "https://datanalytics.worldbank.org/content/1cc36c57-f12d-4aa8-92a2-196bb0ea605f/"
 
 PIA_COUNTRIES = [
-    {"id": "zambia", "name": "Zambia", "region": "Southern Africa"},
-    {"id": "malawi", "name": "Malawi", "region": "Southern Africa"},
-    {"id": "serbia", "name": "Serbia", "region": "Western Balkans"},
-    {"id": "nepal", "name": "Nepal", "region": "South Asia"},
-    {"id": "uzbekistan", "name": "Uzbekistan", "region": "Central Asia"},
-    {"id": "pakistan", "name": "Pakistan", "region": "South Asia"},
-    {"id": "cambodia", "name": "Cambodia", "region": "Southeast Asia"},
+    {"id": "afghanistan", "name": "Afghanistan", "region": "South Asia"},
+    {"id": "bangladesh", "name": "Bangladesh", "region": "South Asia"},
     {"id": "burkina_faso", "name": "Burkina Faso", "region": "West Africa"},
-    {"id": "cote_d_ivoire", "name": "Côte d’Ivoire", "region": "West Africa"},
+    {"id": "cambodia", "name": "Cambodia", "region": "Southeast Asia"},
+    {"id": "cameroon", "name": "Cameroon", "region": "Central Africa"},
     {"id": "chad", "name": "Chad", "region": "Central Africa"},
+    {"id": "cote_d_ivoire", "name": "Côte d’Ivoire", "region": "West Africa"},
     {"id": "gabon", "name": "Gabon", "region": "Central Africa"},
     {"id": "guinea", "name": "Guinea", "region": "West Africa"},
-    {"id": "the_gambia", "name": "The Gambia", "region": "West Africa"},
-    {"id": "cameroon", "name": "Cameroon", "region": "Central Africa"},
+    {"id": "malawi", "name": "Malawi", "region": "Southern Africa"},
     {"id": "mali", "name": "Mali", "region": "West Africa"},
+    {"id": "nepal", "name": "Nepal", "region": "South Asia"},
     {"id": "niger", "name": "Niger", "region": "West Africa"},
-    {"id": "afghanistan", "name": "Afghanistan", "region": "South Asia"},
+    {"id": "pakistan", "name": "Pakistan", "region": "South Asia"},
+    {"id": "serbia", "name": "Serbia", "region": "Western Balkans"},
     {"id": "somalia", "name": "Somalia", "region": "East Africa"},
     {"id": "sudan", "name": "Sudan", "region": "North Africa"},
-    {"id": "bangladesh", "name": "Bangladesh", "region": "South Asia"},
+    {"id": "the_gambia", "name": "The Gambia", "region": "West Africa"},
+    {"id": "uzbekistan", "name": "Uzbekistan", "region": "Central Asia"},
+    {"id": "zambia", "name": "Zambia", "region": "Southern Africa"},
 ]
-PIA_DEFAULT_COUNTRY = "zambia"
+
+PIA_DEFAULT_COUNTRY = "bangladesh"
 
 
 def pia_url_for(country_id: str) -> str:
