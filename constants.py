@@ -38,7 +38,7 @@ TOOL_DESCRIPTION = (
 )
 
 TOOL_BULLETS = [
-    "Deployed separately for five countries: Zambia, Malawi, Serbia, Nepal, and Uzbekistan.",
+    "Deployed separately for 19 countries: Zambia, Malawi, Serbia, Nepal, Uzbekistan, Pakistan, Cambodia, Burkina Faso, Côte d’Ivoire, Chad, Gabon, Guinea, The Gambia, Cameroon, Mali, Niger, Afghanistan, Somalia, Sudan, and Bangladesh.",
     "Built on H3 hexagonal indexing, population rasters, and OpenStreetMap data.",
     "PIA gives planners and policymakers an interactive way to explore infrastructure gaps on the ground.",
 ]
@@ -55,6 +55,21 @@ PIA_COUNTRIES = [
     {"id": "serbia", "name": "Serbia", "region": "Western Balkans"},
     {"id": "nepal", "name": "Nepal", "region": "South Asia"},
     {"id": "uzbekistan", "name": "Uzbekistan", "region": "Central Asia"},
+    {"id": "pakistan", "name": "Pakistan", "region": "South Asia"},
+    {"id": "cambodia", "name": "Cambodia", "region": "Southeast Asia"},
+    {"id": "burkina_faso", "name": "Burkina Faso", "region": "West Africa"},
+    {"id": "cote_d_ivoire", "name": "Côte d’Ivoire", "region": "West Africa"},
+    {"id": "chad", "name": "Chad", "region": "Central Africa"},
+    {"id": "gabon", "name": "Gabon", "region": "Central Africa"},
+    {"id": "guinea", "name": "Guinea", "region": "West Africa"},
+    {"id": "the_gambia", "name": "The Gambia", "region": "West Africa"},
+    {"id": "cameroon", "name": "Cameroon", "region": "Central Africa"},
+    {"id": "mali", "name": "Mali", "region": "West Africa"},
+    {"id": "niger", "name": "Niger", "region": "West Africa"},
+    {"id": "afghanistan", "name": "Afghanistan", "region": "South Asia"},
+    {"id": "somalia", "name": "Somalia", "region": "East Africa"},
+    {"id": "sudan", "name": "Sudan", "region": "North Africa"},
+    {"id": "bangladesh", "name": "Bangladesh", "region": "South Asia"},
 ]
 PIA_DEFAULT_COUNTRY = "zambia"
 
