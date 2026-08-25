@@ -86,4 +86,4 @@ def pia_url_for(country_id: str) -> str:
 # Embedded tool renders inside a fixed-aspect-ratio box rather than a flat
 # pixel height, so it resizes cleanly across screen widths. The dashboard is
 # landscape (map + side panels), so a widescreen 16:9 ratio is used.
-IFRAME_ASPECT_RATIO = "16 / 9"
+IFRAME_ASPECT_RATIO = "20 / 9"
