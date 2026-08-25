@@ -72,7 +72,7 @@ PIA_COUNTRIES = [
     {"id": "zambia", "name": "Zambia", "region": "Southern Africa"},
 ]
 
-PIA_DEFAULT_COUNTRY = "bangladesh"
+PIA_DEFAULT_COUNTRY = "zambia"
 
 
 def pia_url_for(country_id: str) -> str:
