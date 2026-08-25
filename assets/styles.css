@@ -104,7 +104,7 @@ p { line-height: 1.65; }
 .pia-section { background: var(--bg); }
 
 .section-inner {
-  max-width: 980px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 56px 24px;
   display: flex;

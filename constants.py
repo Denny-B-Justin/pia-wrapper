@@ -84,7 +84,6 @@ def pia_url_for(country_id: str) -> str:
 
 
 # Embedded tool renders inside a fixed-aspect-ratio box rather than a flat
-# pixel height, so it resizes cleanly across screen widths. A slightly taller
-# landscape ratio makes the PIA dashboard feel larger without overwhelming the
-# page layout.
-IFRAME_ASPECT_RATIO = "18 / 8"
+# pixel height, so it resizes cleanly across screen widths. Keep the dashboard
+# in its standard widescreen format and widen the page layout instead.
+IFRAME_ASPECT_RATIO = "16 / 9"
