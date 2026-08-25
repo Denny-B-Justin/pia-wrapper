@@ -24,7 +24,12 @@ from utils import (
     embedded_frame,
 )
 
-app = dash.Dash(__name__, title=APP_TITLE, update_title=None)
+app = dash.Dash(
+    __name__,
+    title=APP_TITLE,
+    update_title=None,
+    suppress_callback_exceptions=True,
+)
 server = app.server
 
 LOGO_URL = app.get_asset_url(LOGO_FILENAME)

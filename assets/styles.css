@@ -174,11 +174,58 @@ p { line-height: 1.65; }
 }
 
 .switcher-label {
+  font-family: 'Fira Sans', system-ui, sans-serif;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
+}
+
+.country-dropdown {
+  min-width: 220px;
+  font-family: 'Fira Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.country-dropdown .Select-control {
+  border: 1px solid var(--border);
+  border-radius: 0;
+  min-height: 40px;
+  background: #FFFFFF;
+  box-shadow: none;
+}
+
+.country-dropdown .Select-control:hover {
+  border-color: var(--accent);
+}
+
+.country-dropdown .Select-control:focus,
+.country-dropdown .Select-control.is-focused {
+  border-color: var(--accent);
+  box-shadow: none;
+}
+
+.country-dropdown .Select-value-label,
+.country-dropdown .Select-placeholder,
+.country-dropdown .Select-input {
+  font-family: 'Fira Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.country-dropdown .Select-menu-outer {
+  border-radius: 0;
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.country-dropdown .VirtualizedSelectOption {
+  font-family: 'Fira Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .country-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
