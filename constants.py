@@ -38,7 +38,7 @@ TOOL_DESCRIPTION = (
 )
 
 TOOL_BULLETS = [
-    "Deployed separately for 19 countries: Zambia, Malawi, Serbia, Nepal, Uzbekistan, Pakistan, Cambodia, Burkina Faso, Côte d’Ivoire, Chad, Gabon, Guinea, The Gambia, Cameroon, Mali, Niger, Afghanistan, Somalia, Sudan, and Bangladesh.",
+    "Deployed separately for 27 countries: Zambia, Yemen, West Bank and Gaza, Uzbekistan, The Gambia, Syria, South Sudan, Serbia, Romania, Pakistan, Nepal, Mali, Malawi, Haiti, Guinea, Gabon, Côte d’Ivoire, Chad, Cameroon, Cambodia, Burkina Faso, Benin, Bangladesh, Afghanistan, and Somalia, Sudan, and Niger.",
     "Built on H3 hexagonal indexing, population rasters, and OpenStreetMap data.",
     "PIA gives planners and policymakers an interactive way to explore infrastructure gaps on the ground.",
 ]
@@ -52,23 +52,30 @@ PIA_BASE_URL = "https://datanalytics.worldbank.org/content/1cc36c57-f12d-4aa8-92
 PIA_COUNTRIES = [
     {"id": "afghanistan", "name": "Afghanistan", "region": "South Asia"},
     {"id": "bangladesh", "name": "Bangladesh", "region": "South Asia"},
+    {"id": "benin", "name": "Benin", "region": "West Africa"},
     {"id": "burkina_faso", "name": "Burkina Faso", "region": "West Africa"},
     {"id": "cambodia", "name": "Cambodia", "region": "Southeast Asia"},
     {"id": "cameroon", "name": "Cameroon", "region": "Central Africa"},
     {"id": "chad", "name": "Chad", "region": "Central Africa"},
     {"id": "cote_d_ivoire", "name": "Côte d’Ivoire", "region": "West Africa"},
     {"id": "gabon", "name": "Gabon", "region": "Central Africa"},
+    {"id": "the_gambia", "name": "Gambia", "region": "West Africa"},
     {"id": "guinea", "name": "Guinea", "region": "West Africa"},
+    {"id": "haiti", "name": "Haiti", "region": "Caribbean"},
     {"id": "malawi", "name": "Malawi", "region": "Southern Africa"},
     {"id": "mali", "name": "Mali", "region": "West Africa"},
     {"id": "nepal", "name": "Nepal", "region": "South Asia"},
     {"id": "niger", "name": "Niger", "region": "West Africa"},
     {"id": "pakistan", "name": "Pakistan", "region": "South Asia"},
+    {"id": "romania", "name": "Romania", "region": "Eastern Europe"},
     {"id": "serbia", "name": "Serbia", "region": "Western Balkans"},
     {"id": "somalia", "name": "Somalia", "region": "East Africa"},
+    {"id": "south_sudan", "name": "South Sudan", "region": "East Africa"},
     {"id": "sudan", "name": "Sudan", "region": "North Africa"},
-    {"id": "the_gambia", "name": "The Gambia", "region": "West Africa"},
+    {"id": "syria", "name": "Syria", "region": "Middle East"},
     {"id": "uzbekistan", "name": "Uzbekistan", "region": "Central Asia"},
+    {"id": "west_bank_and_gaza", "name": "West Bank and Gaza", "region": "Middle East"},
+    {"id": "yemen", "name": "Yemen", "region": "Middle East"},
     {"id": "zambia", "name": "Zambia", "region": "Southern Africa"},
 ]
 
