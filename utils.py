@@ -9,7 +9,7 @@ from dash import html, dcc
 
 from constants import (
     TOOL_NAME,
-    TOOL_DESCRIPTION,
+    TOOL_DESCRIPTION,PIA_BLOG_URL,
     TOOL_BULLETS,
     PIA_COUNTRIES,
     IFRAME_ASPECT_RATIO,
@@ -63,7 +63,20 @@ def tool_detail_panel(logo_url):
                 ],
                 className="panel-header",
             ),
-            html.P(TOOL_DESCRIPTION, className="panel-description"),
+            html.P(
+                [
+                    TOOL_DESCRIPTION,
+                    html.A(
+                        " ↗",
+                        href=PIA_BLOG_URL,
+                        target="_blank",
+                        rel="noopener noreferrer",
+                        title="Read the PIA blog",
+                        className="panel-blog-link",
+                    ),
+                ],
+                className="panel-description",
+            ),
             html.Ul(
                 [html.Li(b) for b in TOOL_BULLETS],
                 className="panel-bullets",

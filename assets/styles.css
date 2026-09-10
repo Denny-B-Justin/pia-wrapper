@@ -147,7 +147,26 @@ p { line-height: 1.65; }
 .panel-description {
   color: var(--muted);
   font-size: 16px;
-  max-width: 760px;
+  max-width: 1060px;
+}
+
+.panel-blog-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: -4px 0 0;
+  color: var(--accent);
+  font-size: 22px;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.panel-blog-link:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
 }
 
 .panel-bullets {
