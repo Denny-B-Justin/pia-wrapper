@@ -140,21 +140,30 @@ def embedded_frame(url, key):
     )
 
 
-def video_card(title, vimeo_id=PIA_VIMEO_ID):
+def video_card(title, vimeo_id=PIA_VIMEO_ID, thumbnail_url=None):
     """Right-hand overview video panel: a click-to-play Vimeo card.
 
-    Renders a play button over a (lazily-fetched) Vimeo thumbnail rather than
-    an always-on iframe. The player only mounts once the visitor presses
-    play; the thumbnail fetch and the click-to-play swap are handled
-    client-side by assets/video_card.js, since Dash's server-rendered layout
-    has no notion of per-visitor "is this card playing" state.
+    Renders a play button over a thumbnail rather than an always-on iframe.
+    The player only mounts once the visitor presses play; the click-to-play
+    swap is handled client-side by assets/video_card.js, since Dash's
+    server-rendered layout has no notion of per-visitor "is this card
+    playing" state.
+
+    If `thumbnail_url` is given (e.g. a local asset via app.get_asset_url),
+    it's rendered directly so the poster image is there on first paint. If
+    not, video_card.js falls back to fetching Vimeo's oEmbed thumbnail.
     """
+    thumb_children = (
+        html.Img(src=thumbnail_url, alt="", className="video-card-thumb-img")
+        if thumbnail_url
+        else None
+    )
     return html.Div(
         [
             html.H3(title, className="video-panel-title"),
             html.Div(
                 [
-                    html.Div(className="video-card-thumb"),
+                    html.Div(thumb_children, className="video-card-thumb"),
                     html.Button(
                         html.Div(
                             html.Div(className="video-card-play-icon"),

@@ -35,6 +35,7 @@ server = app.server
 
 LOGO_URL = app.get_asset_url(LOGO_FILENAME)
 PIM_PAM_LOGO_URL = app.get_asset_url("PIMPAM.png")
+PIA_VIDEO_THUMBNAIL_URL = app.get_asset_url("pia_thumbnail.png")
 
 # ---------------------------------------------------------------------------
 # Layout
@@ -70,7 +71,11 @@ def build_layout():
                                     ],
                                     className="section-content-left",
                                 ),
-                                video_card("", PIA_VIMEO_ID),
+                                video_card(
+                                    "",
+                                    PIA_VIMEO_ID,
+                                    thumbnail_url=PIA_VIDEO_THUMBNAIL_URL,
+                                ),
                             ],
                             className="content-grid",
                         ),

@@ -6,16 +6,19 @@
  * Dash's app.layout is rendered server-side once per session, so it has no
  * concept of per-visitor "is this card playing right now" state. This script
  * fills that gap on the client, mirroring the React VideoCard pattern:
- *   1. On first sight of a .video-card-frame, fetch its Vimeo oEmbed
- *      thumbnail and drop it into the .video-card-thumb slot.
+ *   1. On first sight of a .video-card-frame, make sure it has a thumbnail:
+ *      if utils.video_card() already rendered one (a local asset), leave it
+ *      alone; otherwise fetch Vimeo's oEmbed thumbnail as a fallback.
  *   2. The Vimeo player iframe is only created and mounted once the visitor
  *      clicks the play button - never on page load.
  */
 (function () {
   function loadThumbnail(frame) {
-    var vimeoId = frame.getAttribute("data-vimeo-id");
     var thumbSlot = frame.querySelector(".video-card-thumb");
-    if (!vimeoId || !thumbSlot) return;
+    if (!thumbSlot || thumbSlot.querySelector("img")) return; // already have one
+
+    var vimeoId = frame.getAttribute("data-vimeo-id");
+    if (!vimeoId) return;
 
     fetch(
       "https://vimeo.com/api/oembed.json?url=https://vimeo.com/" +
