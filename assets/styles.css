@@ -352,8 +352,9 @@ p { line-height: 1.65; }
   background: #FFFFFF;
   border: 1px solid var(--border);
   padding: 16px;
-  position: sticky;
-  top: 84px;
+  /* static, not sticky: stays put at the top of the column and scrolls
+     away with the page instead of following the visitor down it */
+  position: static;
 }
 
 .video-panel-title {
@@ -505,10 +506,6 @@ p { line-height: 1.65; }
 @media (max-width: 900px) {
   .content-grid {
     grid-template-columns: 1fr;
-  }
-
-  .video-panel {
-    position: static;
   }
 }
 

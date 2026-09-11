@@ -53,21 +53,30 @@ def build_layout():
                 title="Public Infrastructure Access Tool",
             ),
 
-            # ---- PIA detail + country switcher + embed ----
+            # ---- PIA detail + country switcher + video, then the embed ----
+            # The embed lives outside the two-column header row (instead of
+            # being squeezed into its left column) so it spans the full
+            # section width - filling the space that would otherwise sit
+            # empty to the right, below the short video card.
             html.Section(
                 html.Div(
                     [
                         html.Div(
                             [
-                                tool_detail_panel(LOGO_URL),
-                                html.Div(id="country-switcher-wrap"),
-                                html.Div(id="embed-wrap"),
+                                html.Div(
+                                    [
+                                        tool_detail_panel(LOGO_URL),
+                                        html.Div(id="country-switcher-wrap"),
+                                    ],
+                                    className="section-content-left",
+                                ),
+                                video_card("", PIA_VIMEO_ID),
                             ],
-                            className="section-content-left",
+                            className="content-grid",
                         ),
-                        video_card("", PIA_VIMEO_ID),
+                        html.Div(id="embed-wrap"),
                     ],
-                    className="section-inner content-grid",
+                    className="section-inner",
                 ),
                 className="pia-section",
                 id="pia",
