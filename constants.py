@@ -87,7 +87,7 @@ PIA_COUNTRIES = [
 ]
 
 PIA_DEFAULT_COUNTRY = "afghanistan"
-PIA_VIMEO_URL = "https://player.vimeo.com/video/1226061685?title=0&byline=0&portrait=0"
+PIA_VIMEO_ID = "1226061685"
 
 
 def pia_url_for(country_id: str) -> str:

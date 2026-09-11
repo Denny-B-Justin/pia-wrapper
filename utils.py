@@ -13,7 +13,7 @@ from constants import (
     TOOL_BULLETS,
     PIA_COUNTRIES,
     IFRAME_ASPECT_RATIO,
-    PIA_VIMEO_URL,
+    PIA_VIMEO_ID,
 )
 
 
@@ -140,19 +140,32 @@ def embedded_frame(url, key):
     )
 
 
-def video_embed_panel(video_url=PIA_VIMEO_URL):
-    """Right-hand overview video panel embedded from Vimeo."""
+def video_card(title, vimeo_id=PIA_VIMEO_ID):
+    """Right-hand overview video panel: a click-to-play Vimeo card.
+
+    Renders a play button over a (lazily-fetched) Vimeo thumbnail rather than
+    an always-on iframe. The player only mounts once the visitor presses
+    play; the thumbnail fetch and the click-to-play swap are handled
+    client-side by assets/video_card.js, since Dash's server-rendered layout
+    has no notion of per-visitor "is this card playing" state.
+    """
     return html.Div(
         [
-            # html.H2("Overview video", className="video-panel-title"),
+            html.H3(title, className="video-panel-title"),
             html.Div(
-                html.Iframe(
-                    src=video_url,
-                    title="PIA overview video",
-                    className="vimeo-embed",
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write",
-                ),
-                className="video-embed-shell",
+                [
+                    html.Div(className="video-card-thumb"),
+                    html.Button(
+                        html.Div(
+                            html.Div(className="video-card-play-icon"),
+                            className="video-card-play-circle",
+                        ),
+                        className="video-card-play-btn",
+                        **{"aria-label": f"Play {title}"},
+                    ),
+                ],
+                className="video-card-frame",
+                **{"data-vimeo-id": vimeo_id, "data-title": title},
             ),
         ],
         className="video-panel",
