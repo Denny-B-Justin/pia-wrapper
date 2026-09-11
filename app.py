@@ -16,12 +16,13 @@ import dash
 from dash import html, dcc, Input, Output, ALL, ctx
 import dash.exceptions
 
-from constants import APP_TITLE, LOGO_FILENAME, PIA_DEFAULT_COUNTRY, pia_url_for
+from constants import APP_TITLE, LOGO_FILENAME, PIA_DEFAULT_COUNTRY, PIA_VIMEO_URL, pia_url_for
 from utils import (
     brand_header,
     tool_detail_panel,
     country_switcher,
     embedded_frame,
+    video_embed_panel,
 )
 
 app = dash.Dash(
@@ -56,11 +57,17 @@ def build_layout():
             html.Section(
                 html.Div(
                     [
-                        tool_detail_panel(LOGO_URL),
-                        html.Div(id="country-switcher-wrap"),
-                        html.Div(id="embed-wrap"),
+                        html.Div(
+                            [
+                                tool_detail_panel(LOGO_URL),
+                                html.Div(id="country-switcher-wrap"),
+                                html.Div(id="embed-wrap"),
+                            ],
+                            className="section-content-left",
+                        ),
+                        video_embed_panel(PIA_VIMEO_URL),
                     ],
-                    className="section-inner",
+                    className="section-inner content-grid",
                 ),
                 className="pia-section",
                 id="pia",

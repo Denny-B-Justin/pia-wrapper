@@ -40,7 +40,7 @@ TOOL_DESCRIPTION = (
 PIA_BLOG_URL = "https://blogs.worldbank.org/en/governance/closing-health-service-delivery-access-gaps-with-geospatial-insights"
 
 TOOL_BULLETS = [
-    "Deployed separately for 32 countries: Afghanistan, Bangladesh, Benin, Burkina Faso, Cambodia, Cameroon, Chad, Côte d’Ivoire, Djibouti, Equatorial Guinea, Gabon, Gambia, Guinea, Haiti, Laos, Malawi, Mali, Nepal, Niger, Pakistan, Romania, Senegal, Serbia, Somalia, South Sudan, Sudan, Syria, Togo, Uzbekistan, West Bank and Gaza, Yemen, and Zambia.",
+    "Deployed separately for 32 low- and middle-income countries",
     "Built on H3 hexagonal indexing, population rasters, and OpenStreetMap data.",
     "PIA gives planners and policymakers an interactive way to explore infrastructure gaps on the ground.",
 ]
@@ -87,6 +87,7 @@ PIA_COUNTRIES = [
 ]
 
 PIA_DEFAULT_COUNTRY = "afghanistan"
+PIA_VIMEO_URL = "https://player.vimeo.com/video/1226061685?title=0&byline=0&portrait=0"
 
 
 def pia_url_for(country_id: str) -> str:
