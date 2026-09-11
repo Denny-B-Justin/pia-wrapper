@@ -158,30 +158,3 @@ def video_embed_panel(video_url=PIA_VIMEO_URL):
         className="video-panel",
     )
 
-def VideoCard(title, vimeo_id, thumbnail_url=None):
-    if thumbnail_url:
-        overlay_bg = html.Img(src=thumbnail_url, alt="", className="w-full h-full object-cover")
-    else:
-        overlay_bg = None
-    play_button = html.Button(
-        [
-            overlay_bg,
-            html.Div(
-                html.Div(Icon("play_triangle", size=28, color="#111111"), className="w-20 h-20 rounded-full bg-white shadow-xl flex items-center justify-center pl-1 group-hover:scale-110 transition-all duration-200"),
-                className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors duration-200",
-            ),
-        ],
-        id={"type": "video-play-btn", "index": vimeo_id},
-        n_clicks=0,
-        className="absolute inset-0 w-full h-full group",
-        **{"aria-label": f"Play {title}"},
-    )
-    return html.Div([
-        html.H3(title, className="text-base font-semibold text-gray-900 mb-3"),
-        html.Div(
-            play_button,
-            id={"type": "video-container", "index": vimeo_id},
-            className="aspect-video w-full rounded overflow-hidden bg-gray-900 border border-gray-200 relative",
-        ),
-    ])
-
